@@ -31,3 +31,34 @@ function calculate() {
         result.value = "Error";
     }
 }
+
+
+document.querySelectorAll('.keys button').forEach(button => {
+    button.addEventListener('click', function() {
+        let action = this.dataset.action;
+        let value = this.dataset.value;
+
+        switch (action) {
+            case "clearAll":
+                clearAll();
+                break;
+            case "clear":
+                clear();
+                break;
+            case "percent":
+                percent();
+                break;
+            case "add":
+                add(value);
+                break;
+            case "operate":
+                operate(value);
+                break;
+            case "calculate":
+                calculate();
+                break;
+        }
+    });
+});
+
+

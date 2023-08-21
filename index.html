@@ -15,29 +15,29 @@
             <input type="text" id="result" disabled>
         </div>
         <div class="keys">
-            <button onclick="clearAll()">AC</button>
-            <button onclick="clear()">C</button>
-            <button onclick="percent()">%</button>
-            <button onclick="operate('/')">÷</button>
+            <button data-action="clearAll">AC</button>
+            <button data-action="clear">C</button>
+            <button data-action="percent">%</button>
+            <button data-action="operate" data-value="/">÷</button>
 
-            <button onclick="add('7')">7</button>
-            <button onclick="add('8')">8</button>
-            <button onclick="add('9')">9</button>
-            <button onclick="operate('*')">*</button>
+            <button data-action="add" data-value="7">7</button>
+            <button data-action="add" data-value="8">8</button>
+            <button data-action="add" data-value="9">9</button>
+            <button data-action="operate" data-value="*">*</button>
 
-            <button onclick="add('4')">4</button>
-            <button onclick="add('5')">5</button>
-            <button onclick="add('6')">6</button>
-            <button onclick="operate('-')">-</button>
+            <button data-action="add" data-value="4">4</button>
+            <button data-action="add" data-value="5">5</button>
+            <button data-action="add" data-value="6">6</button>
+            <button data-action="operate" data-value="-">-</button>
 
-            <button onclick="add('1')">1</button>
-            <button onclick="add('2')">2</button>
-            <button onclick="add('3')">3</button>
-            <button onclick="operate('+')">+</button>
+            <button data-action="add" data-value="1">1</button>
+            <button data-action="add" data-value="2">2</button>
+            <button data-action="add" data-value="3">3</button>
+            <button data-action="operate" data-value="+">+</button>
 
-            <button onclick="add('0')">0</button>
-            <button onclick="add('.')">.</button>
-            <button class="equal" onclick="calculate()">=</button>
+            <button data-action="add" data-value="0">0</button>
+            <button data-action="add">.</button>
+            <button class="equal" data-action="calculate">=</button>
         </div>
     </div>
 </body>
