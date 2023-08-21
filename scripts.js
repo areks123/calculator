@@ -62,3 +62,40 @@ document.querySelectorAll('.keys button').forEach(button => {
 });
 
 
+document.addEventListener('keydown', function(event) {
+    switch (event.key) {
+        case "Escape":
+            clearAll();
+            break;
+        case "Backspace":
+            clear();
+            break;
+        // Añadir más teclas según se necesite, por ejemplo:
+        case "Enter":
+            calculate();
+            break;
+        case "+":
+            operate("+");
+            break;
+        case "-":
+            operate("-");
+            break;
+        case "*":
+            operate("*");
+            break;
+        case "/":
+            operate("/");
+            break;
+        case ".":
+            add(".");
+            break;
+        case "%":
+            percent();
+            break;
+        default:
+            if (!isNaN(event.key)) { // Si es un número
+                add(event.key);
+            }
+            break;
+    }
+});
