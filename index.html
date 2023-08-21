@@ -15,10 +15,15 @@
             <input type="text" id="result" disabled>
         </div>
         <div class="keys">
+            <button onclick="clearAll()">AC</button>
+            <button onclick="clear()">C</button>
+            <button onclick="percent()">%</button>
+            <button onclick="operate('/')">÷</button>
+
             <button onclick="add('7')">7</button>
             <button onclick="add('8')">8</button>
             <button onclick="add('9')">9</button>
-            <button onclick="operate('+')">+</button>
+            <button onclick="operate('*')">*</button>
 
             <button onclick="add('4')">4</button>
             <button onclick="add('5')">5</button>
@@ -28,14 +33,12 @@
             <button onclick="add('1')">1</button>
             <button onclick="add('2')">2</button>
             <button onclick="add('3')">3</button>
-            <button onclick="operate('*')">*</button>
+            <button onclick="operate('+')">+</button>
 
             <button onclick="add('0')">0</button>
             <button onclick="add('.')">.</button>
-            <button onclick="calculate()">=</button>
-            <button onclick="operate('/')">/</button>
+            <button class="equal" onclick="calculate()">=</button>
         </div>
-        <button onclick="clear()">C</button>
     </div>
 </body>
 

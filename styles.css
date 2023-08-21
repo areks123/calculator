@@ -4,12 +4,19 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
+    background-color: rgb(255, 231, 134);
+
+
+}
+
+#result, .container {
+    box-sizing: border-box;
 }
 
 .container {
-    background-color: #fff;
-    padding: 20px;
+    background-color: #edc928;
+    padding: 40px 20px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
@@ -25,13 +32,32 @@ body {
     border: none;
     border-radius: 5px;
     text-align: right;
-    background-color: #eee;
+    /* background-color: #eee; */
+    background-color: rgb(255, 230, 156);
+    box-shadow: inset 2px 2px 5px rgba(242, 226, 178, 0.7), 
+                inset -2px -2px 5px rgba(255, 246, 198, 0.7);
+    margin-bottom: 20px;
+    height: 60px;
+    font-weight: bold;
+    font-size: 25px;
+    box-shadow: ;
 }
 
 .keys {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 10px;
+    gap: 15px;
+    grid-template-areas:
+         "ac c percent div"
+        "seven eight nine mult"
+        "four five six minus"
+        "one two three plus"
+        "zero zero equal equal";
+    ;
+}
+
+.equal {
+    grid-area: equal;
 }
 
 button {
@@ -41,10 +67,15 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.2s;
+    background-color: rgb(250, 224, 92);
+}
+
+.keys button {
+    color: 
 }
 
 button:hover {
-    background-color: #eee;
+    background-color: rgb(255, 230, 156);
 }
 
 button:focus {
