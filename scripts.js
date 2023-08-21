@@ -23,10 +23,65 @@ function operate(operator) {
     result.value += " " + operator + " ";
 }
 
+function safeCalculate(expression) {
+    let terms = expression.split(/\s+/);
+    
+    for (let i = 0; i < terms.length; i++) {
+        if (terms[i] === "%") {
+            let left = parseFloat(terms[i - 1]);
+            let result = left * 0.01;
+
+            terms.splice(i - 1, 2, result.toString());
+            i -= 1;
+        }
+    }
+
+    for (let i = 0; i < terms.length; i++) {
+        if (terms[i] === "*" || terms[i] === "/") {
+            let left = parseFloat(terms[i - 1]);
+            let right = parseFloat(terms[i + 1]);
+            let result;
+
+            if (terms[i] === "*") {
+                result = left * right;
+            } else if (terms[i] === "/" && right !== 0) {
+                result = left / right;
+            } else {
+                return "Error";
+            }
+
+            terms.splice(i - 1, 3, result.toString());
+            i -= 2;
+        }
+    }
+
+    for (let i = 0; i < terms.length; i++) {
+        if (terms[i] === "+" || terms[i] === "-") {
+            let left = parseFloat(terms[i - 1]);
+            let right = parseFloat(terms[i + 1]);
+            let result;
+
+            if (terms[i] === "+") {
+                result = left + right;
+            } else {
+                result = left - right;
+            }
+
+            terms.splice(i - 1, 3, result.toString());
+            i -= 2;
+        }
+    }
+
+    return parseFloat(terms[0]);
+}
+
+
 function calculate() {
     var result = document.getElementById("result");
     try {
-        result.value = eval(result.value);
+        // result.value = eval(result.value);
+        result.value = safeCalculate(result.value);
+
     } catch(err) {
         result.value = "Error";
     }
